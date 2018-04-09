@@ -5,5 +5,9 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './meu-segundo.component.html',
   styleUrls: ['./meu-segundo.component.css']
 })
-export class MeuSegundoComponent { }
+export class MeuSegundoComponent 
+{
+  //Lógica de programação com JS
+
+ }
 
