@@ -1,20 +1,65 @@
 <section class="property-binding">
   
-  <article>
+  <!-- <article>
     <h3>Interpolation / Interpolação</h3>
     <p>String renderizada com interpolação: {{ url }}</p>
     <p>Resultado de 1 + 1 é: {{ 1 + 1 }}</p>
     <p>Resultado de 1 + 1 não é: {{ 1 + 1 + getValor() }}</p>
     <p>Curso de Angular e gosto do curso: {{ cursoAngular && getCurtirCurso() }}</p>
-  </article>
+  </article> -->
 
-  <article>
+  <!-- <article>
     <h3>Property Binding</h3>
     <img [src]="urlImagem" >
     <img src="{{urlImagem}}" >
     <img bind-src="urlImagem" >
-    
-    
+  </article> -->
+
+  <article>
+    <h3>Class e Style Binding</h3>
+    <div>
+      Selecione uma classe:
+      <select #classe (change) ="0">
+        <option value="alert-success">Sucesso</option>
+        <option value="alert-danger">Perigo</option>
+        <option value="alert-warning">Atenção</option>
+        <option value="alert-info">Informação</option>
+        <option value="alert-light">Claro</option>
+        <option value="alert-dark">Escuro</option>
+      </select>
+      <br><br>
+      
+      <!--Segunda forma - interpolação-->
+      <div class="alert {{ classe.value }}" role="alert">
+        Texto colorido conforme o valor do combobox.
+      </div>
+
+
+      <!--Primeira forma - property binding de classe-->
+      <div class="alert" role="alert"
+      [class.alert-success]="classe.value == 'alert-success'">Sucesso</div>
+
+      <div class="alert" role="alert"
+      [class.alert-danger]="classe.value == 'alert-danger'">Perigo</div>
+      
+      <div class="alert" role="alert"
+      [class.alert-warning]="classe.value == 'alert-warning'">Atenção</div>
+      
+      <div class="alert" role="alert"
+      [class.alert-info]="classe.value == 'alert-info'">Informação</div>
+      
+      <div class="alert" role="alert"
+      [class.alert-light]="classe.value == 'alert-light'">Claro</div>
+      
+      <div class="alert" role="alert"
+      [class.alert-dark]="classe.value == 'alert-dark'">Escuro</div>
+
+
+      <!--Terceira forma - property binding com estilo de classe-->
+      <div class="alert alert-dark" role="alert"
+      [style.display]="classe.value == 'alert-dark' ? 'block' : 'none'">Esse texto só aparace em caso de erro</div>
+
+    </div>
   </article>
 
 </section>
